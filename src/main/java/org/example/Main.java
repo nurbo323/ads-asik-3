@@ -18,5 +18,24 @@ public class Main {
 
         System.out.println("Total elements inserted: " + table.getSize());
         table.printBucketSizes();
+
+        // TEST BST
+        System.out.println("\n--- Testing BST ---");
+
+        BST<Integer, String> bst = new BST<>();
+        bst.put(5, "five");
+        bst.put(2, "two");
+        bst.put(8, "eight");
+        bst.put(1, "one");
+        bst.put(3, "three");
+
+        System.out.println("Element with key 2: " + bst.get(2));
+        bst.delete(2);
+        System.out.println("Element with key 2 after deletion: " + bst.get(2));
+
+        System.out.println("All keys in BST (in-order traversal):");
+        for (Integer key : bst.iterator()) {
+            System.out.println(key);
+        }
     }
 }
